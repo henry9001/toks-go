@@ -51,7 +51,7 @@ type TokenVerifyRequest struct {
 // TokenVerifyResponse is returned by POST /token/verify.
 type TokenVerifyResponse struct {
 	Valid  bool                   `json:"valid"`
-	Reason string                `json:"reason,omitempty"`
+	Reason string                 `json:"reason,omitempty"`
 	Claims map[string]interface{} `json:"claims,omitempty"`
 }
 
@@ -136,7 +136,7 @@ type RunRegisterResponse struct {
 
 // RunStatusRequest is the body for PUT /run/{id}/status.
 type RunStatusRequest struct {
-	State  string `json:"state"`  // "completed", "failed", "expired"
+	State  string `json:"state"` // "completed", "failed", "expired"
 	Reason string `json:"reason,omitempty"`
 }
 
@@ -213,7 +213,7 @@ type AttributionResponse struct {
 
 // KillRequest is the body for POST /containment/kill.
 type KillRequest struct {
-	Scope      string `json:"scope"`       // "agent", "run", "tenant"
+	Scope      string `json:"scope"` // "agent", "run", "tenant"
 	ScopeValue string `json:"scope_value"`
 	TenantID   string `json:"tenant_id"`
 	Reason     string `json:"reason"`
@@ -326,11 +326,11 @@ type CreatePolicyVersionRequest struct {
 
 // PolicyVersionResponse is returned by POST /policy/rules and POST /policy/rules/{v}/activate.
 type PolicyVersionResponse struct {
-	Version     int              `json:"version"`
-	Rules       json.RawMessage  `json:"rules,omitempty"`
-	Active      bool             `json:"active"`
-	CreatedAt   *time.Time       `json:"created_at,omitempty"`
-	ActivatedAt *time.Time       `json:"activated_at,omitempty"`
+	Version     int             `json:"version"`
+	Rules       json.RawMessage `json:"rules,omitempty"`
+	Active      bool            `json:"active"`
+	CreatedAt   *time.Time      `json:"created_at,omitempty"`
+	ActivatedAt *time.Time      `json:"activated_at,omitempty"`
 }
 
 // PolicyVersionListResponse is returned by GET /policy/rules.
